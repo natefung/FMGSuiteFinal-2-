@@ -1,0 +1,73 @@
+﻿@model IEnumerable<FMGSuiteFinal.Models.ENT>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+    <link href="~/Content/Styles.css" rel="stylesheet" />
+</head>
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.entAvgHoldTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.entAvgSpeedAnswer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.entMaxHoldTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.entAbandoned)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.entNumberOfAcceptedCalls)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.entPercentAbandoned)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.entAvgAbandonTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.entAvgHoldTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.entAvgSpeedAnswer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.entMaxHoldTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.entAbandoned)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.entNumberOfAcceptedCalls)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.entPercentAbandoned)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.entAvgAbandonTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.entDateTime }) |
+            @Html.ActionLink("Details", "Details", new { id=item.entDateTime }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.entDateTime })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<head>
+    <link href="~/Content/Styles.css" rel="stylesheet" />
+</head>
+
+<div class="jumbotron" id="override-jumbotron">
+    <center><h1 id="jumboText">FMG Suite Phone Reporting</h1></center>
+    <center><p class="lead" id="jumboText">Summarize hourly reports seemlessly with our new reporting system</p></center>
+    <center><p><a href="@Url.Action("Index", "Report")" class="btn btn-primary btn-lg" id="override-callToAction">Stop Slacking Reports Now&raquo;</a></p></center>
+</div>
+
+<h2>Sample Data Dashboard</h2>
+
+<div class="row">
+    <div class="col-md-4">
+        <h2>Enter Data </h2>
+        <p>
+            Enter customer data into our database
+        </p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
+    </div>
+    <div class="col-md-4">
+        <h2>View Data</h2>
+        <p>View and edit data stored in our database</p>
+        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
+    </div>
+
+</div>

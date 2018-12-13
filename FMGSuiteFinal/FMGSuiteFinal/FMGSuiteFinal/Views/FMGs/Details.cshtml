@@ -1,0 +1,78 @@
+﻿@model FMGSuiteFinal.Models.FMG
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<head>
+    <link href="~/Content/Styles.css" rel="stylesheet" />
+</head>
+
+<h2>Details</h2>
+
+<div>
+    <h4>FMG</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fmgAvgHoldTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fmgAvgHoldTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fmgAvgSpeedAnswer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fmgAvgSpeedAnswer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fmgMaxHoldTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fmgMaxHoldTime)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fmgAbandoned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fmgAbandoned)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fmgNumberOfAcceptedCalls)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fmgNumberOfAcceptedCalls)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fmgPercentAbandoned)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fmgPercentAbandoned)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fmgAvgAbandonTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fmgAvgAbandonTime)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.fmgDateTime }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

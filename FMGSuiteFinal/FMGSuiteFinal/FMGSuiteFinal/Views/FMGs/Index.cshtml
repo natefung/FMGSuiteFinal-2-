@@ -1,0 +1,73 @@
+﻿@model IEnumerable<FMGSuiteFinal.Models.FMG>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<head>
+    <link href="~/Content/Styles.css" rel="stylesheet" />
+</head>
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.fmgAvgHoldTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fmgAvgSpeedAnswer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fmgMaxHoldTime)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fmgAbandoned)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fmgNumberOfAcceptedCalls)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fmgPercentAbandoned)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fmgAvgAbandonTime)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.fmgAvgHoldTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fmgAvgSpeedAnswer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fmgMaxHoldTime)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fmgAbandoned)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fmgNumberOfAcceptedCalls)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fmgPercentAbandoned)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.fmgAvgAbandonTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.fmgDateTime }) |
+            @Html.ActionLink("Details", "Details", new { id=item.fmgDateTime }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.fmgDateTime })
+        </td>
+    </tr>
+}
+
+</table>
