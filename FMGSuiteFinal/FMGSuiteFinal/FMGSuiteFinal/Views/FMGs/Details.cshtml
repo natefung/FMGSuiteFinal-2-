@@ -63,16 +63,24 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.fmgAvgAbandonTime)
+            @Html.DisplayNameFor(model => model.fmgAvgAbandon)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.fmgAvgAbandonTime)
+            @Html.DisplayFor(model => model.fmgAvgAbandon)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fmgDateTime)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fmgDateTime)
         </dd>
 
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.fmgDateTime }) |
+    @Html.ActionLink("Edit", "Edit", new { id = Model.fmgID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

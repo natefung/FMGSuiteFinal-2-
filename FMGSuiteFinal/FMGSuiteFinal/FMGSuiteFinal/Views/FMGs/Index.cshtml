@@ -34,7 +34,10 @@
             @Html.DisplayNameFor(model => model.fmgPercentAbandoned)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.fmgAvgAbandonTime)
+            @Html.DisplayNameFor(model => model.fmgAvgAbandon)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.fmgDateTime)
         </th>
         <th></th>
     </tr>
@@ -60,12 +63,15 @@
             @Html.DisplayFor(modelItem => item.fmgPercentAbandoned)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.fmgAvgAbandonTime)
+            @Html.DisplayFor(modelItem => item.fmgAvgAbandon)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.fmgDateTime }) |
-            @Html.ActionLink("Details", "Details", new { id=item.fmgDateTime }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.fmgDateTime })
+            @Html.DisplayFor(modelItem => item.fmgDateTime)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.fmgID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.fmgID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.fmgID })
         </td>
     </tr>
 }

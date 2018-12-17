@@ -11,24 +11,30 @@ using FMGSuiteFinal.Models;
 
 namespace FMGSuiteFinal.Controllers
 {
+    [Authorize]
     public class FMGsController : Controller
     {
         private FMGSuiteContext db = new FMGSuiteContext();
 
+        public ActionResult Confirm()
+        {
+            return View();
+        }
+
         // GET: FMGs
         public ActionResult Index()
         {
-            return View(db.Assay.ToList());
+            return View(db.fmg.ToList());
         }
 
         // GET: FMGs/Details/5
-        public ActionResult Details(DateTime id)
+        public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FMG fMG = db.Assay.Find(id);
+            FMG fMG = db.fmg.Find(id);
             if (fMG == null)
             {
                 return HttpNotFound();
@@ -47,26 +53,26 @@ namespace FMGSuiteFinal.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "fmgDateTime,fmgAvgHoldTime,fmgAvgSpeedAnswer,fmgMaxHoldTime,fmgAbandoned,fmgNumberOfAcceptedCalls,fmgPercentAbandoned,fmgAvgAbandonTime")] FMG fMG)
+        public ActionResult Create([Bind(Include = "fmgID,fmgAvgHoldTime,fmgAvgSpeedAnswer,fmgMaxHoldTime,fmgAbandoned,fmgNumberOfAcceptedCalls,fmgPercentAbandoned,fmgAvgAbandon,fmgDateTime")] FMG fMG)
         {
             if (ModelState.IsValid)
             {
-                db.Assay.Add(fMG);
+                db.fmg.Add(fMG);
                 db.SaveChanges();
-                return RedirectToAction("Index", "FMGs");
+                return RedirectToAction("Confirm");
             }
 
             return View(fMG);
         }
 
         // GET: FMGs/Edit/5
-        public ActionResult Edit(DateTime id)
+        public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FMG fMG = db.Assay.Find(id);
+            FMG fMG = db.fmg.Find(id);
             if (fMG == null)
             {
                 return HttpNotFound();
@@ -79,7 +85,7 @@ namespace FMGSuiteFinal.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "fmgDateTime,fmgAvgHoldTime,fmgAvgSpeedAnswer,fmgMaxHoldTime,fmgAbandoned,fmgNumberOfAcceptedCalls,fmgPercentAbandoned,fmgAvgAbandonTime")] FMG fMG)
+        public ActionResult Edit([Bind(Include = "fmgID,fmgAvgHoldTime,fmgAvgSpeedAnswer,fmgMaxHoldTime,fmgAbandoned,fmgNumberOfAcceptedCalls,fmgPercentAbandoned,fmgAvgAbandon,fmgDateTime")] FMG fMG)
         {
             if (ModelState.IsValid)
             {
@@ -91,13 +97,13 @@ namespace FMGSuiteFinal.Controllers
         }
 
         // GET: FMGs/Delete/5
-        public ActionResult Delete(DateTime id)
+        public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            FMG fMG = db.Assay.Find(id);
+            FMG fMG = db.fmg.Find(id);
             if (fMG == null)
             {
                 return HttpNotFound();
@@ -108,10 +114,10 @@ namespace FMGSuiteFinal.Controllers
         // POST: FMGs/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(DateTime id)
+        public ActionResult DeleteConfirmed(int id)
         {
-            FMG fMG = db.Assay.Find(id);
-            db.Assay.Remove(fMG);
+            FMG fMG = db.fmg.Find(id);
+            db.fmg.Remove(fMG);
             db.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -124,5 +130,7 @@ namespace FMGSuiteFinal.Controllers
             }
             base.Dispose(disposing);
         }
+
+
     }
 }

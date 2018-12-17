@@ -14,9 +14,7 @@ namespace FMGSuiteFinal.DAL
 
         }
 
-        public DbSet<FMG> Assay { get; set; }
-        public DbSet<ENT> Balance { get; set; }
-        public DbSet<ALP> Compound { get; set; }
+        public DbSet<FMG> fmg { get; set; }
 
         public System.Data.Entity.DbSet<FMGSuiteFinal.Models.Users> Users { get; set; }
     }

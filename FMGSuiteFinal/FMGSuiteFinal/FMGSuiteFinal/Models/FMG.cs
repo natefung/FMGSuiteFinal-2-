@@ -11,7 +11,11 @@ namespace FMGSuiteFinal.Models
 
     [Table("FMG")]
     public class FMG
+
     {
+        [Key]
+        public int fmgID { get; set; }
+
         [Required(ErrorMessage = "Please enter a valid number")]
         [DisplayName("Average Hold Time")]
         public double fmgAvgHoldTime { get; set; }
@@ -38,9 +42,8 @@ namespace FMGSuiteFinal.Models
 
         [Required(ErrorMessage = "Please enter a valid number")]
         [DisplayName("Average Time To Abandon")]
-        public double fmgAvgAbandonTime { get; set; }
+        public double fmgAvgAbandon { get; set; }
 
-        [Key]
         [Required(ErrorMessage = "Please enter a valid date/time")]
         [DisplayName("Current Date/Time")]
         public DateTime fmgDateTime { get; set; }

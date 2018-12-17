@@ -18,7 +18,7 @@
         <h4>FMG</h4>
         <hr />
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        @Html.HiddenFor(model => model.fmgDateTime)
+        @Html.HiddenFor(model => model.fmgID)
 
         <div class="form-group">
             @Html.LabelFor(model => model.fmgAvgHoldTime, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -69,10 +69,18 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.fmgAvgAbandonTime, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.fmgAvgAbandon, htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.fmgAvgAbandonTime, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.fmgAvgAbandonTime, "", new { @class = "text-danger" })
+                @Html.EditorFor(model => model.fmgAvgAbandon, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.fmgAvgAbandon, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.fmgDateTime, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.fmgDateTime, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.fmgDateTime, "", new { @class = "text-danger" })
             </div>
         </div>
 
