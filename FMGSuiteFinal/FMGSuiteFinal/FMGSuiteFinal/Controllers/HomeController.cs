@@ -1,4 +1,18 @@
-﻿using FMGSuiteFinal.DAL;
+﻿/*Group 2-3
+ * Nathan Fung
+ * Eric Lee
+ * Anson Huang
+ * Katrina Peterson
+ * 
+ * This program is an mvc web app that will allow FMG Suite to enter in data and statistics into their database instead of
+ * having to slack messages back and forth about their reports. 
+ * It allows people to login and enter their statistics for that hour. Also has a tableau dashboard that updates live with 
+ * the database. 
+ * 
+ * */
+
+
+using FMGSuiteFinal.DAL;
 using FMGSuiteFinal.Models;
 using System;
 using System.Collections.Generic;
